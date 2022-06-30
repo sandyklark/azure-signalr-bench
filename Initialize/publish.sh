@@ -201,7 +201,7 @@ if [[ $ALL || $UPDATEPOOL ]]; then
     -s Standard_D4s_v3 \
     -e \
     --min-count 1 \
-    --max-count 35 \
+    --max-count 10 \
     --os-type Linux \
     -c 1 || true
   ## Uncomment below to enable windows pool to support aspnet test cases
