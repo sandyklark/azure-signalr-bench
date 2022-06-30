@@ -198,10 +198,10 @@ if [[ $ALL || $UPDATEPOOL ]]; then
     --resource-group $RESOURCE_GROUP \
     --cluster-name $KUBERNETES_SEVICES \
     -n linux0 \
-    -s Standard_D4s_v3 \
+    -s Standard_D4as_v5 \
     -e \
     --min-count 1 \
-    --max-count 10 \
+    --max-count 2 \
     --os-type Linux \
     -c 1 || true
   ## Uncomment below to enable windows pool to support aspnet test cases
