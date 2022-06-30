@@ -110,7 +110,7 @@ fi
 if [[ -z $(az aks show --name $KUBERNETES_SEVICES -g $RESOURCE_GROUP 2>/dev/null) ]]; then
     echo "start to create kubernetes services $KUBERNETES_SEVICES. May cost several minutes, waiting..."
     az aks create -n $KUBERNETES_SEVICES --vm-set-type VirtualMachineScaleSets --enable-managed-identity -s Standard_D4as_v5 --nodepool-name captain --generate-ssh-keys \
-      --load-balancer-managed-outbound-ip-count 8 --load-balancer-outbound-ports 10000  --enable-addons monitoring --network-plugin azure
+      --load-balancer-managed-outbound-ip-count 2 --load-balancer-outbound-ports 10000  --enable-addons monitoring --network-plugin azure
     echo "kubernetes services $KUBERNETES_SEVICES created."
     echo "start getting kube/config"
     rm ~/.kube/perf || true
