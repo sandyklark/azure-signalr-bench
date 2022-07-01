@@ -119,8 +119,8 @@ init_aks_group
 
 if [[ $ALL || $PORTAL ]]; then
   echo "replace the clientId and tenantId in src/Pods/Portal/appsettings.json"
-  appId = $( az keyvault secret show --vault-name $KEYVAULT -n "appid" | jq ".value" -r )
-  tenant = $( az keyvault secret show --vault-name $KEYVAULT -n "tenant" | jq ".value" -r )
+  appId=$( az keyvault secret show --vault-name $KEYVAULT -n "appid" | jq ".value" -r )
+  tenant=$( az keyvault secret show --vault-name $KEYVAULT -n "tenant" | jq ".value" -r )
   echo "tenant is $tenant"
   cd $DIR/../src/Pods/Portal
   cat appsettings.template.json | replace CLIENTID_PLACE_HOLDER $appId | replace TENANTID_PLACE_HOLDER $tenant > appsettings.json
